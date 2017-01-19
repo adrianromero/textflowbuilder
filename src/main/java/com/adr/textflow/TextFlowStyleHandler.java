@@ -1,5 +1,5 @@
 //    TextFlow Builder is a JavaFX library create styled labels
-//    Copyright (C) 2016 Adrián Romero Corchado.
+//    Copyright (C) 2016-2017 Adrián Romero Corchado.
 //
 //    This file is part of TextFlow Builder
 //
@@ -16,7 +16,6 @@
 //     limitations under the License.
 package com.adr.textflow;
 
-import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 
@@ -24,7 +23,7 @@ import javafx.scene.text.TextFlow;
  *
  * @author adrian
  */
-public class TextFlowStyleHandler implements PaneHandler {
+public class TextFlowStyleHandler implements ParseHandler {
 
     private final TextFlow tf = new TextFlow();
     
@@ -38,8 +37,7 @@ public class TextFlowStyleHandler implements PaneHandler {
         tf.getChildren().add(t);
     }  
     
-    @Override
-    public Pane toPane() {
+    public TextFlow toTextFlow() {
         return tf;
     }   
 }

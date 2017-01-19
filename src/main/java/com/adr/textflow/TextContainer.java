@@ -17,7 +17,8 @@
 package com.adr.textflow;
 
 import java.io.IOException;
-import javafx.scene.layout.Pane;
+import javafx.scene.layout.FlowPane;
+import javafx.scene.text.TextFlow;
 
 /**
  *
@@ -25,17 +26,17 @@ import javafx.scene.layout.Pane;
  */
 public class TextContainer {
 
-    public static Pane createTextFlow(String value) throws IOException {
+    public static TextFlow createTextFlow(String value) throws IOException {
         TextFlowStyleHandler handler = new TextFlowStyleHandler();
         ParseCommands parser = new ParseCommands(value, handler);
         parser.parse();
-        return handler.toPane();
+        return handler.toTextFlow();
     }
 
-    public static Pane createFlowPane(String value) throws IOException {
+    public static FlowPane createFlowPane(String value) throws IOException {
         FlowPaneHandler handler = new FlowPaneHandler();
         ParseCommands parser = new ParseCommands(value, handler);
         parser.parse();
-        return handler.toPane();
+        return handler.toFlowPane();
     }
 }
