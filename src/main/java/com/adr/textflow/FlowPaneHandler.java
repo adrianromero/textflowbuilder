@@ -38,6 +38,7 @@ public class FlowPaneHandler implements ParseHandler {
     public void process(String command, String text) {
 
         Text t = new Text(text);
+        t.getStyleClass().add("styledtext");
         TextFlow tf = new TextFlow(t);
         if (!command.isEmpty()) {
             t.setStyle(command);

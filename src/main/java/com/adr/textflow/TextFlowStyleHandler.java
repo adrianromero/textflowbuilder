@@ -31,6 +31,7 @@ public class TextFlowStyleHandler implements ParseHandler {
     public void process(String command, String text) {
 
         Text t = new Text(text);
+        t.getStyleClass().add("styledtext");        
         if (!command.isEmpty()) {
             t.setStyle(command);
         }
